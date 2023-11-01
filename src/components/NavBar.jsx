@@ -5,11 +5,12 @@ import Navbar from "react-bootstrap/Navbar";
 
 import { CartWidget } from "./CartWidget";
 
-export const NavBar = () => {
+const NavBar = () => {
     return (
     <Navbar bg="dark" data-bs-theme="dark">
     <Container>
-      <Navbar.Brand href="#home">Distribuidora Bristol Tienda de Comestibles </Navbar.Brand>
+      <Navbar.Brand href="#home">Distribuidora Bristol Tienda de Comestibles{" "}
+       </Navbar.Brand>
        <Nav className="me-auto">
         <Nav.Link href="#home">Salazones</Nav.Link>
         <Nav.Link href="#features">Embutidos</Nav.Link>
@@ -19,4 +20,6 @@ export const NavBar = () => {
     </Container>
     </Navbar>
     );
-} ;
+};
+
+export default NavBar;
