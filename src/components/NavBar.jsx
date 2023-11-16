@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 
 import { CartWidget } from "./CartWidget";
 
-const NavBar = () => {
+export const NavBar = () => {
     return (
     <Navbar bg="dark" data-bs-theme="dark">
     <Container>
@@ -21,5 +21,3 @@ const NavBar = () => {
     </Navbar>
     );
 };
-
-export default NavBar;
