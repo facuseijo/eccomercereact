@@ -1,5 +1,5 @@
 export const products = [
-    {
+     {
          id:1,
          name: "Paleta Cocida Cagnoli",
          description: "Pernil de cerdo de primera",
@@ -29,7 +29,7 @@ export const products = [
          description: "Lomo de cerdo ahumado",
          price: 3810,
          category:"Salazones",
-         img: "../images/lomo.jpg",
+         img: "./images/lomo.jpg",
       },
       {
          id:5,

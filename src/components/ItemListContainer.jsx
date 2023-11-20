@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 
 import { ItemList } from "./ItemList";
-import { products } from "../data/products";
+import { products } from "../data.js/products"; 
 
 export const ItemListContainer = () => {
-    const [products, setProducts] = useState([]);
+    const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     
     useEffect(() => {
@@ -15,7 +15,7 @@ export const ItemListContainer = () => {
                 resolve(products);
             }, 2200);
          });
-         promise.then((response) => {
+         promise.then((response) => { // la respuesta contiene products
             setItems(response);
          }) 
          .finally (() => setLoading(false));
@@ -24,7 +24,6 @@ export const ItemListContainer = () => {
    
     return (
      <Container className= "mt-4"> 
-
         <ItemList items={items} />
      </Container >
     );
