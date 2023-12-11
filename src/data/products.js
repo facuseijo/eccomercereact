@@ -5,7 +5,7 @@ export const products = [
          description: "Pernil de cerdo de primera",
          price: 1840,
          category:"Embutidos",
-         img:   "./images/fiambre_de_cerdo.png",
+         img:   "../images/fiambre_de_cerdo.png",
       },
       {
          id:2,
@@ -13,7 +13,7 @@ export const products = [
          description:"Jamon de pata de cerdo",
          price: 3400,
          category:"Embutidos",
-         img: "./images/jamoncocido_Cagnoli.png",
+         img: "../images/jamoncocido_Cagnoli.png",
       },
       {
          id:3,
@@ -21,7 +21,7 @@ export const products = [
          description: "Pata de cerdo natural ",
          price: 4900,
          category:"Embutidos",
-         img:  "./images/natu.jpeg",
+         img:  "../images/natu.jpeg",
       },
       {
          id:4,
@@ -29,7 +29,7 @@ export const products = [
          description: "Lomo de cerdo ahumado",
          price: 3810,
          category:"Salazones",
-         img: "./images/lomo.jpg",
+         img: "../images/lomo.jpg",
       },
       {
          id:5,
@@ -37,7 +37,7 @@ export const products = [
          description: "Mortadela en bocha de primera",
          price: 2110,
          category:"Chacinados",
-         img:  "./images/bocha.png",
+         img:  "../images/bocha.png",
       },
       {
          id:6,
@@ -45,7 +45,7 @@ export const products = [
          description: "Panceta ahumada de cerdo",
          price: 4500,
          category:"Salazones",
-         img:  "./images/pancetabierzo.jpg",
+         img:  "../images/pancetabierzo.jpg",
       },
       {
          id:7,
@@ -53,15 +53,15 @@ export const products = [
          description: "Embutidos de primera",
          price: 5380,
          category:"Embutidos",
-         img: "./images/salamines.jpg",
+         img: "../images/salamines.jpg",
       },
       {
          id:8,
          name: "Salame Cagnoli",
-         description: "Salame tipo milan",
+         description: "Salame tipo milan Italiano",
          price: 4060,
          category:"Embutidos",
-         img: "./images/milan.png",
+         img: "../images/milan.png",
       },
       {
          id:9,
@@ -69,7 +69,7 @@ export const products = [
          description: "Jamon crudo 1/2 pata",
          price: 4110,
          category:"Salazones",
-         img: "./images/crudo.jpg",
+         img: "../images/crudo.jpg",
       },
       {
          id:10,
@@ -77,7 +77,7 @@ export const products = [
          description: "Cantimpalo tipo calabres",
          price: 3810,
          category:"Embutidos",
-         img: "./images/cantimpalo.jpg",
+         img: "../images/cantimpalo.jpg",
       },
       {
          id:11,
@@ -85,7 +85,7 @@ export const products = [
          description: "Queso holanda tipo MDP",
          price: 2900,
          category:"Quesos duros",
-         img: "./images/varense.jpeg",
+         img: "../images/varense.jpeg",
       },
       {
          id:12,
@@ -93,7 +93,7 @@ export const products = [
          description: "Reggiano estacionado ahumado",
          price: 3580,
          category:"Quesos duros",
-         img: "./images/reggiano.jpg",
+         img: "../images/reggiano.jpg",
       },
  ];
  

@@ -5,29 +5,28 @@ import Navbar from "react-bootstrap/Navbar";
 
 import { CartWidget } from "./CartWidget";
 
-import { products } from "../data.js/products"; 
+import { products } from "../data/products";
 
 const categories = products.map((item) => item.category);
 
-const uniqueCategories = new Set (categories);
-console.log([...uniqueCategories]); // desestructuracion y convercion a nuevo array
+const uniqueCategories = new Set(categories);
 
 export const NavBar = () => {
-    return (
+  return (
     <Navbar bg="dark" data-bs-theme="dark">
-    <Container>
-      <NavLink to= "/">
-         <Navbar.Brand >Distribuidora Bristol Tienda de Comestibles</Navbar.Brand>
-       </NavLink>
-       <Nav className="me-auto">
-        {[...uniqueCategories].map((item) => (
-         <Nav.Link as={NavLink} key={item} to={`/category/${item}`}>
-           {item}
-         </Nav.Link>
-         )) }
-      </Nav>
-      <CartWidget />
-    </Container>
+      <Container>
+        <NavLink to="/">
+          <Navbar.Brand >Distribuidora Bristol Tienda de Comestibles</Navbar.Brand>
+        </NavLink>
+        <Nav className="me-auto">
+          {[...uniqueCategories].map((item) => (
+            <Nav.Link as={NavLink} key={item} to={`/category/${item}`}>
+              {item}
+            </Nav.Link>
+          ))}
+        </Nav>
+        <CartWidget />
+      </Container>
     </Navbar>
-    );
+  );
 };

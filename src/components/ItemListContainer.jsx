@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 
 import { ItemList } from "./ItemList";
-import { products } from "../data.js/products";
+import { products } from "../data/products";
 
 export const ItemListContainer = () => {
     const [items, setItems] = useState([]);
@@ -15,26 +15,26 @@ export const ItemListContainer = () => {
         const promise = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(products);
-            }, 2200);
-         });
+            }, 2000);
+        });
 
-         promise     // la respuesta contiene products
+        promise     // la respuesta contiene products
             .then((response) => {
                 if (id) {
-                    const filtrados = response.filter((item)) => item.category === id);
-                setItems(filtrados);
+                    const filtrados = response.filter((item) => item.category === id);
+                    setItems(filtrados);
                 } else {
-                  setItems(response);
+                    setItems(response);
                 }
             })
-              .finally (() => setLoading(false));
+            .finally(() => setLoading(false));
 
     }, [id]);
 
-  return (
-    <Container className="mt-4">
-        <ItemList items={items} />
-    </Container >
- );
+    return (
+        <Container className="mt-4">
+            <ItemList items={items} />
+        </Container >
+    );
 
 };
