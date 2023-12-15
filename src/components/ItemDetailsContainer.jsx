@@ -1,33 +1,33 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { Container } from 'react-bootstrap';
 import { useParams } from "react-router-dom";
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
 
-import { products } from "../data/products";
+import { Load } from "./Load";
+import { ItemDetail } from './ItemDetail';
 
 export const ItemDetailsContainer = () => {
-    const [item, setItem] = useState(null);
+  const [item, setItem] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const { id } = useParams();
 
-    const { id } = useParams();
+  useEffect(() => {
+    const db = getFirestore();
 
-    useEffect(() => {
-        const promise = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(products);
-            }, 2200);
-        });
+    const refDoc = doc(db, "Items", id); 
 
-        promise.then((response) => {
-            const findeds = response.find((item) => item.id == id);
-            setItem(findeds);
-        });
-    }, [id]);
+    getDoc(refDoc)
+      .then((snapshot) => {
+        setItem({ id: snapshot.id, ...snapshot.data() });
+      })
+      .finally(() => setLoading(false))
 
-    if (!item) {
-        return <>Loading ...</>;
-    }
+  }, [id]);
 
-    return <div>
-        <h1>{item.name}</h1>
-        <img src={item.img} width={200} />
-        <p>{item.description}</p>
-    </div>
+
+return (
+  <Container className="d-flex flex-wrap mt-3">
+    {loading ? <Load /> : <ItemDetail item={item.id} />}
+  </Container>
+);
 };
